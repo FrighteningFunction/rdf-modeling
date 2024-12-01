@@ -13,19 +13,23 @@ def triples_to_rdf(triples, output_file="output.rdf"):
 
     # Initialize RDF graph
     g = Graph()
+    g.bind("ex", EX)
 
     for subject, predicate, obj in triples:
-        # Encode spaces in URIs
-        subj_uri = URIRef(EX + quote(subject))
-        pred_uri = URIRef(EX + quote(predicate))
+        # Encode spaces and special characters in URIs
+        subj_uri = URIRef(EX + quote(subject, safe=''))
+        # Use Namespace for predicates to ensure valid XML elements
+        pred_uri = EX[predicate]
         if obj.isnumeric():
             obj_node = Literal(float(obj))
+        elif obj.startswith("http://") or obj.startswith("https://"):
+            obj_node = URIRef(obj)
         else:
-            obj_node = URIRef(EX + quote(obj))
+            obj_node = Literal(obj, lang="hu")
 
         # Add triple to graph
         g.add((subj_uri, pred_uri, obj_node))
 
-    # Serialize graph to RDF/XML
-    g.serialize(destination=output_file, format="xml")
+    # Serialize graph to RDF/XML with UTF-8 encoding
+    g.serialize(destination=output_file, format="xml", encoding="utf-8")
     print(f"RDF/XML file saved to: {output_file}")

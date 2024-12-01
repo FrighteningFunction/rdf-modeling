@@ -20,6 +20,12 @@ class TestTriplesToRdf(unittest.TestCase):
     def test_rdf_file_creation(self):
         triples_to_rdf(self.triples, self.output_file)
         self.assertTrue(os.path.exists(self.output_file))
+        # Check if the RDF file is well-formed
+        try:
+            g = Graph()
+            g.parse(self.output_file, format="xml")
+        except Exception as e:
+            self.fail(f"RDF file is not well-formed: {e}")
 
     def test_rdf_content(self):
         triples_to_rdf(self.triples, self.output_file)
