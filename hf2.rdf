@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:ns1="http://hf2.org/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://hf2.org/t%C3%A1bla">
+    <ns1:jelez rdf:resource="http://hf2.org/%C3%BAt%20p%C3%A1lya"/>
+    <ns1:biztos%C3%ADt rdf:resource="http://hf2.org/%C3%BAt%20p%C3%A1lya"/>
+    <ns1:t%C3%BCntet rdf:resource="http://hf2.org/%C3%A1tj%C3%A1r%C3%B3%20%C3%BAt%20fajta%20%C3%BAt%20p%C3%A1lya%20%C3%A1tj%C3%A1r%C3%B3%20vesz%C3%A9ly%20v%C3%A1rakoz%C3%B3hely%20m%C3%B3d%20szem%C3%A9ly%20v%C3%A1rakoz%C3%A1s%20v%C3%A1rakoz%C3%A1s%20mozg%C3%A1skorl%C3%A1tozott%20v%C3%A1rakoz%C3%B3hely"/>
+    <ns1:kell rdf:resource="http://hf2.org/%C3%BAt%20p%C3%A1lya"/>
+    <ns1:jelezhet rdf:resource="http://hf2.org/%C3%BAt%20p%C3%A1lya%20%C3%A1tj%C3%A1r%C3%B3%20vesz%C3%A9ly%20v%C3%A1rakoz%C3%B3hely%20m%C3%B3d%20szem%C3%A9ly%20v%C3%A1rakoz%C3%A1s"/>
+    <ns1:jelezhet rdf:resource="http://hf2.org/%C3%BAt%20p%C3%A1lya%20%C3%A1tj%C3%A1r%C3%B3%20vesz%C3%A9ly%20v%C3%A1rakoz%C3%B3hely%20m%C3%B3d%20szem%C3%A9ly%20v%C3%A1rakoz%C3%A1s%20v%C3%A1rakoz%C3%A1s%20mozg%C3%A1skorl%C3%A1tozott%20v%C3%A1rakoz%C3%B3hely"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hf2.org/alatt%20t%C3%A1bla">
+    <ns1:t%C3%BCntet rdf:resource="http://hf2.org/%C3%A1tj%C3%A1r%C3%B3%20%C3%BAt%20fajta%20%C3%BAt%20p%C3%A1lya%20%C3%A1tj%C3%A1r%C3%B3%20vesz%C3%A9ly%20v%C3%A1rakoz%C3%B3hely%20m%C3%B3d%20szem%C3%A9ly%20v%C3%A1rakoz%C3%A1s%20v%C3%A1rakoz%C3%A1s%20mozg%C3%A1skorl%C3%A1tozott%20v%C3%A1rakoz%C3%B3hely"/>
+    <ns1:jelezhet rdf:resource="http://hf2.org/%C3%BAt%20p%C3%A1lya%20%C3%A1tj%C3%A1r%C3%B3%20vesz%C3%A9ly%20v%C3%A1rakoz%C3%B3hely%20m%C3%B3d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hf2.org/alatt%20alatt%20k%C3%B6z%C3%B6tt%20%C3%A1ll%20t%C3%A1bla">
+    <ns1:jelezhet rdf:resource="http://hf2.org/%C3%BAt%20p%C3%A1lya%20%C3%A1tj%C3%A1r%C3%B3%20vesz%C3%A9ly%20v%C3%A1rakoz%C3%B3hely%20m%C3%B3d"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hf2.org/alatt%20jelz%C5%91t%C3%A1bla">
+    <ns1:kell rdf:resource="http://hf2.org/%C3%BAt%20p%C3%A1lya"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hf2.org/keresztez%C5%91d%C3%A9s">
+    <ns1:kell rdf:resource="http://hf2.org/%C3%BAt%20p%C3%A1lya"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hf2.org/m%C5%B1k%C3%B6dtet%C3%A9s">
+    <ns1:jelezhet rdf:resource="http://hf2.org/%C3%BAt%20p%C3%A1lya%20%C3%A1tj%C3%A1r%C3%B3%20vesz%C3%A9ly%20v%C3%A1rakoz%C3%B3hely%20m%C3%B3d%20szem%C3%A9ly%20v%C3%A1rakoz%C3%A1s%20v%C3%A1rakoz%C3%A1s%20mozg%C3%A1skorl%C3%A1tozott%20v%C3%A1rakoz%C3%B3hely"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://hf2.org/alatt%20alatt%20k%C3%B6z%C3%B6tt%20%C3%A1ll%20fel%C3%BCl%20alatt%20kell">
+    <ns1:jelezhet rdf:resource="http://hf2.org/%C3%BAt%20p%C3%A1lya%20%C3%A1tj%C3%A1r%C3%B3%20vesz%C3%A9ly%20v%C3%A1rakoz%C3%B3hely%20m%C3%B3d%20szem%C3%A9ly%20v%C3%A1rakoz%C3%A1s"/>
+  </rdf:Description>
+</rdf:RDF>

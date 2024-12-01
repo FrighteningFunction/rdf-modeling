@@ -13,3 +13,15 @@ z/3. *  A z/2. pontban említett jelzőtábla alatt elhelyezett kiegészítő 
 z/4. *  „Útzár” (95/d. ábra), a tábla azt jelzi, hogy az utat rendőrség útzár telepítésével lezárta;
 
 z/5. *  „Körforgalom” (95/e. ábra); a tábla azt jelzi, hogy a következő útkereszteződésben körforgalmú forgalmi rend van;
+(3) A jelzőtábla alatt elhelyezett kiegészítő táblán – két felfelé
+
+mutató nyíl között – levő felirat jelzi, ha a veszély hosszabb útszakaszon áll fenn (97. ábra).
+
+(4) A vasúti átjárót – az (1) bekezdés v), x), illetőleg z) pontjában említett veszélyt jelző táblán felül – a következő jelzőtáblák is jelzik:
+
+a) *  „Vasúti átjáró kezdete” (98–99. ábra), illetőleg „Két- vagy többvágányú vasúti átjáró kezdete” (99/a–99/b. ábra);
+„Várakozóhely” (110. ábra); a tábla a járművek kijelölt várakozóhelyét jelzi, a tábla alatt elhelyezett kiegészítő tábla jelezheti a várakozó helyen kötelező elhelyezkedés módját (pl. a jobb oldali kerekekkel a járdára állva kell várakozni) (111. ábra), vagy azt, hogy a várakozóhely kizárólag bizonyos járművek (pl. csak személygépkocsik 112. ábra, csak kerékpárok 112/c. és 112/f. ábra, mozgáskorlátozott személyt szállító jármű 115. ábra és 115/a. ábra) részére van fenntartva. Ahol a várakozást ellenőrző óra van, kiegészítő tábla (113. ábra) jelezheti azt az időszakot, amelyben a várakozást ellenőrző óra (parkométer) vagy jegykiadó automata működtetése kötelező, vagy a kiegészítő tábla jelezheti azt is, hogy várakozni csak meghatározott időtartamig és a 41. § (4)–(5) bekezdésében foglaltak megtartásával szabad (113. és 114. ábra). A mozgáskorlátozottakat szállító járművek részére fenntartott várakozóhelyet kiegészítő tábla (115. ábra) vagy külön jelzőtábla (115/a. ábra) jelezheti;
+
+e/1. *  „Várakozóhely a közlekedési korlátozás alá eső nehéz tehergépkocsik részére” (112/a., 112/b. ábra), a tábla azt jelzi, hogy a várakozóhely a korlátozás hatálya alá eső nehéz tehergépkocsik részére ki van jelölve;
+
+e/2. *  „Várakozási övezet (zóna)” (112/d. ábra); a tábla azt jelzi, hogy az úton a várakozás megengedett vagy – 113. és 114. ábra szerinti kiegészítő táblán feltüntetett módon – a „Várakozási övezet (zóna) vége” (112/e. ábra) jelzőtábláig a várakozás feltételekhez kötött.

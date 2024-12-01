@@ -4,8 +4,7 @@ import huspacy
 import re
 
 def preprocess_text(text):
-    stopwords = ["azt", "az", "a", "és", "vagy", "is", "nem", "nincs", "van", "volt", "lesz", "ha", "de", "már"]
-    text = " ".join([word.lower() for word in text.split() if word.lower() not in stopwords and word.isalnum()])
+
     text = re.sub(r'[a-f]\)', '', text)  # Remove subsection markers a), b)
     text = re.sub(r'\(\d+\)', '', text)  # Remove (1), (2)
     text = re.sub(r'\*|\"', '', text)  # Remove asterisks and quotes
@@ -20,14 +19,16 @@ def extract_triples(token, triples):
     if token.dep_ == "nsubj":  # Subject
         subject = " ".join([
             child.lemma_ for child in token.subtree
-            if child.dep_ in ["det", "amod", "compound", "nmod", "case", "appos", "acl", "relcl"] # minden esetleges járulékos információt berakunk
+            if child.dep_ in ["det", "amod", "compound", "appos", "acl", "relcl"] # minden esetleges járulékos információt berakunk
         ]) + " " + token.lemma_
 
+        subject = re.sub(r'\b(a|az)\b', '', subject).strip() 
+
         predicate = token.head.lemma_  # Predicate
-        obj = " ".join([
+        obj = " ".join(set([
             child.lemma_ for child in token.head.subtree
-            if child.dep_ in ["attr", "obj"]
-        ])
+            if child.dep_ in ["attr", "obj"] and len(child.lemma_) > 2
+        ]))
         triples.append((subject.strip(), predicate, obj.strip()))
 
 def generate_triples(file_path):
@@ -39,11 +40,14 @@ def generate_triples(file_path):
     nlp = huspacy.load()
     doc = nlp(text)
 
+    stopwords = ["azt", "az", "a", "és", "vagy", "is", "nem", "nincs", "van", "volt", "lesz", "ha", "de", "már"]
+
     triples = []
 
     # Process sentences and tokens
     for sent in doc.sents:
-        for token in sent:
+        filtered_tokens = [token for token in sent if token.lemma_.lower() not in stopwords and token.is_alpha]
+        for token in filtered_tokens:
             extract_triples(token, triples)
 
     # Post-process triples
