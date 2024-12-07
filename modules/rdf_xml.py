@@ -33,3 +33,6 @@ def triples_to_rdf(triples, output_file="output.rdf"):
     # Serialize graph to RDF/XML with UTF-8 encoding
     g.serialize(destination=output_file, format="xml", encoding="utf-8")
     print(f"RDF/XML file saved to: {output_file}")
+
+    # Return the RDF graph object
+    return g
