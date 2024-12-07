@@ -4,7 +4,7 @@
 /jetty-distribution-9.4.56.v20240826/
 __pycache__/
 .pytest_cache/
-hf2.rdf
-test.ipynb
-test.py
-~$2_dokumentacio.docx
+/hf2.rdf
+/test.ipynb
+/test.py
+/~$2_dokumentacio.docx
