@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>RDF Model Query</title>
+    <style>
+        .info { color: blue; }
+        .error { color: red; }
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #dddddd; text-align: left; padding: 8px; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+    <h1>RDF Model Query Interface</h1>
+    <form method="post">
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" id="subject"><br><br>
+        <label for="predicate">Predicate:</label>
+        <input type="text" name="predicate" id="predicate"><br><br>
+        <label for="object">Object:</label>
+        <input type="text" name="object" id="object"><br><br>
+        <input type="submit" value="Query">
+    </form>
+    {% if results %}
+        <h2>Results:</h2>
+        {% if results[0].get('error') %}
+            <p class="error">{{ results[0]['error'] }}</p>
+        {% else %}
+            <table>
+                <tr>
+                    {% for header in results[0].keys() %}
+                        <th>{{ header }}</th>
+                    {% endfor %}
+                </tr>
+                {% for row in results %}
+                    <tr>
+                        {% for value in row.values() %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+            <p class="info">Total results: {{ results|length }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
