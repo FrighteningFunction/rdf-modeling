@@ -1,13 +1,15 @@
 # modules/rdf_xml.py
+import logging
 from rdflib import Graph, URIRef, Literal, Namespace
 from urllib.parse import quote
 
 def triples_to_rdf(triples, output_file="output.rdf"):
     """
     Converts Python triples to RDF/XML format and saves to a file.
-    
+
     :param triples: List of triples (subject, predicate, object)
     :param output_file: Path to save the RDF/XML file
+    :return: RDF graph object
     """
     EX = Namespace("http://hf2.org/")
 
@@ -32,7 +34,7 @@ def triples_to_rdf(triples, output_file="output.rdf"):
 
     # Serialize graph to RDF/XML with UTF-8 encoding
     g.serialize(destination=output_file, format="xml", encoding="utf-8")
-    print(f"RDF/XML file saved to: {output_file}")
+    logging.info(f"RDF/XML file saved to: {output_file}")
 
     # Return the RDF graph object
     return g
