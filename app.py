@@ -4,6 +4,8 @@ from modules.rdf_xml import triples_to_rdf
 from modules.triple_generator import generate_triples
 import configparser
 from rdflib.plugins.sparql.processor import SPARQLResult
+from urllib.parse import unquote
+from rdflib import URIRef, Literal
 
 app = Flask(__name__)
 
@@ -61,7 +63,16 @@ def query():
             if isinstance(qres, SPARQLResult):
                 results = []
                 for row in qres:
-                    result = {str(var): str(row[var]) for var in qres.vars}
+                    result = {}
+                    for var in qres.vars:
+                        value = row[var]
+                        if isinstance(value, URIRef):
+                            # Extract local name from URI and decode it
+                            local_name = value.split('/')[-1]
+                            value = unquote(local_name)
+                        elif isinstance(value, Literal):
+                            value = str(value)
+                        result[str(var)] = value
                     results.append(result)
                 logging.info(f"Query returned {len(results)} results.")
             else:
@@ -82,7 +93,16 @@ def query():
             if isinstance(qres, SPARQLResult):
                 results = []
                 for row in qres:
-                    result = {str(var): str(row[var]) for var in qres.vars}
+                    result = {}
+                    for var in qres.vars:
+                        value = row[var]
+                        if isinstance(value, URIRef):
+                            # Extract local name from URI and decode it
+                            local_name = value.split('/')[-1]
+                            value = unquote(local_name)
+                        elif isinstance(value, Literal):
+                            value = str(value)
+                        result[str(var)] = value
                     results.append(result)
                 logging.info(f"Query returned {len(results)} results.")
             else:
