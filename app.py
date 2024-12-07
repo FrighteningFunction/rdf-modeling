@@ -4,7 +4,7 @@ from modules.rdf_xml import triples_to_rdf
 from modules.triple_generator import generate_triples
 import configparser
 from rdflib.plugins.sparql.processor import SPARQLResult
-from urllib.parse import unquote
+from urllib.parse import unquote, quote
 from rdflib import URIRef, Literal
 
 app = Flask(__name__)
@@ -52,11 +52,16 @@ def build_sparql_query(subject, predicate, obj):
     """
     query_parts = []
     if subject:
-        query_parts.append(f"?s = <http://hf2.org/{subject}>")
+        encoded_subject = quote(subject, safe='')
+        query_parts.append(f"?s = <http://hf2.org/{encoded_subject}>")
     if predicate:
-        query_parts.append(f"?p = <http://hf2.org/{predicate}>")
+        encoded_predicate = quote(predicate, safe='')
+        query_parts.append(f"?p = <http://hf2.org/{encoded_predicate}>")
     if obj:
-        query_parts.append(f'?o = "{obj}"@hu')
+        # Create a Literal and serialize it to SPARQL format
+        obj_literal = Literal(obj, lang="hu")
+        serialized_obj = obj_literal.n3()
+        query_parts.append(f'?o = {serialized_obj}')
 
     query_filter = f"FILTER ({' && '.join(query_parts)})" if query_parts else ''
 
