@@ -28,7 +28,7 @@ def run_cli(rdf_graph):
                 print(f"Error: {e}")
 
 def main():
-    config_file = "config.ini"
+    config_file = "rdfApp.config"
     input_file, output_file = load_config(config_file)
 
     # Generate triples from the input text
@@ -43,5 +43,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# You can keep this file for CLI usage if needed.
